@@ -3,7 +3,6 @@ trigger:
 
 variables:
   buildConfiguration: 'Release'
-  dotnetSdkVersion: '3.1.300'
 
 stages:
 - stage: 'Build'
@@ -119,6 +118,7 @@ stages:
       vmImage: 'windows-2019'
     variables:
     - group: 'Release'
+      dotnetSdkVersion: '3.1.300'
     steps:
     - task: UseDotNet@2
       displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
